@@ -182,6 +182,7 @@ const msgInput = document.getElementById("message-input");
 const sendBtn = document.getElementById("send-button");
 const container = document.querySelector(".container");
 const backButton = document.querySelector(".back-button");
+const bgImagePicker = document.getElementById("bg-image-picker");
 
 // Load User Hnadler
 const loadUser = () => {
@@ -267,11 +268,18 @@ sendBtn.addEventListener("click", handleSendMessage);
 // call Load User Data
 loadUser();
 
-// Menu Functionality
+// ------------------ Menu Functionality ------------------------
 
 const searchInput = document.getElementById("search-user");
 const bgColorPicker = document.getElementById("bg-color-picker");
-const headerColorPicker = document.getElementById("header-color-picker");
+const colorPicker = document.getElementById("header-color-picker");
+const userHead = document.querySelector(".user-head");
+const chatHead = document.querySelector(".chat-head");
+const head = document.querySelector(".head");
+const headTitle = document.querySelector(".head-title");
+const backBtn = document.querySelector(".back-button");
+const dropdown = document.querySelector(".dropdown-btn");
+
 
 // 🎯 SEARCH USER FUNCTIONALITY
 searchInput.addEventListener("input", function () {
@@ -288,14 +296,38 @@ searchInput.addEventListener("input", function () {
     });
 });
 
-// 🎨 CHANGE BACKGROUND COLOR
-bgColorPicker.addEventListener("input", function () {
-    document.body.style.backgroundColor = bgColorPicker.value;
+// 🖼️ CHANGE CHAT MESSAGE BACKGROUND IMAGE
+bgImagePicker.addEventListener("change", function (event) {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            chatMessage.style.backgroundImage = `url('${e.target.result}')`;
+            chatMessage.style.backgroundSize = "cover";
+            chatMessage.style.backgroundPosition = "center";
+            chatMessage.style.backgroundRepeat = "no-repeat";
+        };
+
+        reader.readAsDataURL(file);
+    }
 });
 
-// 🎨 CHANGE HEADER & BUTTON COLOR
-headerColorPicker.addEventListener("input", function () {
-    document.querySelectorAll(".head, .send-button, .dropdown-btn").forEach((element) => {
-        element.style.backgroundColor = headerColorPicker.value;
+// 🎨 CHANGE `user-head`, `chat-head`, `.head`, `.user2`, and `send-button` COLOR
+colorPicker.addEventListener("change", function () {
+    const selectedColor = colorPicker.value;
+    
+    userHead.style.backgroundColor = selectedColor;
+    chatHead.style.backgroundColor = selectedColor;
+    sendBtn.style.backgroundColor = selectedColor;
+    head.style.backgroundColor = selectedColor;
+    headTitle.style.backgroundColor = selectedColor;
+    backBtn.style.backgroundColor = selectedColor;
+    dropdown.style.backgroundColor = selectedColor;
+
+    // Change all `.user2` message bubbles
+    document.querySelectorAll(".user2").forEach((message) => {
+        message.style.backgroundColor = selectedColor;
     });
 });

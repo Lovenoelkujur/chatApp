@@ -17,10 +17,21 @@
                     <button class="dropdown-btn">☰</button>
                     <div class="dropdown-content">
                         <input type="search" id="search-user" placeholder="Search user...">
-                        <label>Background Color:</label>
-                        <input type="color" id="bg-color-picker">
-                        <label>Header/Button Color:</label>
-                        <input type="color" id="header-color-picker">
+                        <label>Change Background Image:</label>
+                        <input type="file" id="bg-image-picker" accept="image/*">
+                        <label>Change Color:</label>
+                        <select id="header-color-picker">
+                            <option value="skyblue">Sky Blue</option>
+                            <option value="lightgreen">Light Green</option>
+                            <option value="salmon">Salmon</option>
+                            <option value="gold">Gold</option>
+                            <option value="purple">Purple</option>
+                            <option value="brown">Brown</option>
+                            <option value="olive">Olive</option>
+                            <option value="orange">Orange</option>
+                            <option value="green">Green</option>
+                            <option value="red">Red</option>
+                        </select>
                     </div>
                 </div>
 
@@ -35,7 +46,7 @@
             <div class="chat-head">
                  <!-- Added Back Button -->
                  <button class="back-button" onclick="showUsers()">Back</button>
-                 <h1 class="head">Chat Details</h1>
+                 <h1 class="head-title">Chat Details</h1>
              </div>
 
             <div class="chat-header">
