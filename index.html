@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Chat App</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section (Users) -->
+        <div class="user-list">
+            <div class="user-head">
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <button class="dropdown-btn">☰</button>
+                    <div class="dropdown-content">
+                        <input type="search" id="search-user" placeholder="Search user...">
+                        <label>Background Color:</label>
+                        <input type="color" id="bg-color-picker">
+                        <label>Header/Button Color:</label>
+                        <input type="color" id="header-color-picker">
+                    </div>
+                </div>
+
+                <h1 class="head">Chat Session</h1>
+            </div>
+
+            <ul id="users"></ul>
+        </div>
+
+        <!-- Right Section (Chat) -->
+        <div class="chat-window">
+            <div class="chat-head">
+                 <!-- Added Back Button -->
+                 <button class="back-button" onclick="showUsers()">Back</button>
+                 <h1 class="head">Chat Details</h1>
+             </div>
+
+            <div class="chat-header">
+                <img id="user-avatar" class="img-avatar" src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg" alt="User Avatar">
+                <div>
+                    <h3 id="user-name" class="user-name">User Name</h3>
+                    <h4 id="user-status" class="user-status">User Status</h4>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Message part  -->
+             <div id="chat-message" class="chat-message"></div>
+             <hr>
+
+             <!-- Message Input  -->
+              <div class="chat-input">
+                <input id="message-input" class="message-input" type="text" placeholder="Type a Message">
+                <button id="send-button" class="send-button">Send</button>
+              </div>
+         </div>
+    </div>
+
+    <!------------- Script ------------>
+    <script src="./script.js"></script>
+</body>
+</html>
