@@ -244,6 +244,7 @@ input[type="color"] {
 /* ------------------ Responsive --------------- */
 
 @media screen and (max-width: 768px) {
+
     .chat-window {
         display: none; /* Initially hide chat on smaller screens */
         max-width: 100%;
@@ -253,6 +254,10 @@ input[type="color"] {
         background-color: skyblue;
         display: flex;
 
+    }
+
+    .chat-message{
+        max-height: 50vh;
     }
 
     .user-list {

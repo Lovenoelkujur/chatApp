@@ -28,7 +28,7 @@ The **Basic Chat App** is a simple and responsive chat interface built with **HT
 ## 🚀 Getting Started
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/lovenoelkujur/basic-chat-app.git
+git clone https://github.com/Lovenoelkujur/basic-chat-app.git
 ```
 ### 2️⃣ Open in Browser
 Simply open `index.html` in a browser to run the application.
